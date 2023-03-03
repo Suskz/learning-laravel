@@ -16,7 +16,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 
 Route::get('/', [EventController::class, 'index']);
+//create -- create DB
 Route::get('/events/create', [EventController::class, 'create']);
+//show -- specifics dates
+Route::get('/events/{id}', [EventController::class, 'show']);
+//store -- send DB
 Route::post('/events', [EventController::class, 'store']);
 
 Route::get('/contato', function () {
